@@ -122,8 +122,8 @@ export class Hero {
 
         } else if (arme != 1 && potion == 1) { // Si ce n'est pas une arme, mais une potion
 
-            if (sacPotions >= 10) { // Si le sac de potion est pas plein
-                potion == 0; // On abandonne la potion
+            if (sacPotions >= 10) { // Si le sac de potion est plein
+                potion == 0; // On abandonne la potion lootée
                 return false;
 
             } else if (sacPotions < 10) { // Si le sac de potion n'est pas plein
