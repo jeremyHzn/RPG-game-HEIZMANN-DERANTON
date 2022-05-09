@@ -3,17 +3,18 @@ export class Monster {
     _attaque;
     _defense;
     _ptVie;
-    _images;
+    _img;
     _target;
 
-    constructor(nom, attaque, defense, ptVie, images, target) {
+    constructor(nom, attaque, defense, ptVie, img, target) {
         this.nom = nom;
         this.attaque = attaque;
         this.defense = defense;
         this.ptVie = ptVie;
-        this.images = images;
+        this.img = img;
         this.target = target;
     }
+    
 
     get nom() {
         return this._nom;
@@ -38,6 +39,7 @@ export class Monster {
     set defense(tmp) {
         return this._defense = tmp;
     }
+
     get ptVie() {
         return this._ptVie;
     }
@@ -46,13 +48,14 @@ export class Monster {
         return this._ptVie = tmp;
     }
 
-    get images() {
-        return this._images;
+    get img() {
+        return this._img;
     }
 
-    set images(tmp) {
-        return this._images = tmp;
+    set img(tmp) {
+        return this._img = tmp;
     }
+
     get target() {
         return this._target;
     }
@@ -60,4 +63,26 @@ export class Monster {
     set target(tmp) {
         return this._target = tmp;
     }
+
+    attaque(cible) {
+        if (cible.ptVie <= 0) { // Si le héro est mort
+            return true;
+        } else if (cible.ptVie > 0) { // Si le héro est tjrs vivant
+            attaque = attaque - cible.defense; // Voir énoncé n°2 --> méthode d'attaque, car rien comprit à la consigne 
+            return false;
+        }
+    }
+
+    ajoutDom() { // A laisser vide pour les classes héritages
+
+    }
+
+    suppressionDom() { // A laisser vide pour les classes héritages
+
+    }
+
+    lacherPotionOuArme() { // A laisser vide pour les classes héritages
+
+    }
+
 }
